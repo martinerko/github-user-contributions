@@ -1,0 +1,28 @@
+{
+    "name": "github-user-contributions",
+    "version": "0.1.0",
+    "description": "Node.js wrapper for Github v3 API to retrieve contribution statistics about specific user",
+    "main": "lib/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "github",
+        "api",
+        "contributions"
+    ],
+    "author": "martinerko",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/martinerko/github-user-contributions.git"
+    },
+    "homepage": "https://github.com/martinerko/github-user-contributions",
+    "bugs": {
+        "url": "https://github.com/martinerko/github-user-contributions/issues"
+    },
+    "dependencies": {
+        "axios": "^0.9.1",
+        "bluebird": "^3.3.4"
+    }
+}
