@@ -15,6 +15,61 @@ npm install github-user-contributions
 
 - commits - returns an array of commits grouped by repositories and branches
 
+## Samples
+
+Retrieve commits from all repositories owned/forked by user *martinerko*.
+
+```js
+var github = require("github-user-contributions");
+var client_id = "your_client_id";
+var client_secret = "your_client_secret";
+var client = github.client(client_id, client_secret);
+
+
+client.commits("martinerko", function(err, data) {
+  if (err) {
+    return console.error(err);
+  }
+  data.forEach(printRepositoryCommits);
+});
+```
+
+Retrieve commits only from *github-user-contributions* repository.
+
+```js
+client.commits("martinerko", "github-user-contributions", function(err, data) {
+  if (err) {
+    return console.error(err);
+  }
+  data.forEach(printRepositoryCommits);
+});
+```
+
+Retrieve commits from specific repositories, but only from *master* branch.
+
+```js
+client.commits("martinerko", ["expressjs.com", "react-storybook"], "master", function(err, data) {
+  if (err) {
+    return console.error(err);
+  }
+  data.forEach(printRepositoryCommits);
+});
+```
+
+Retrieve commits from specific repositories, but only from *master* and *gh-pages* branches.
+Please note, the order of repositories/branches is not important.
+We will check all specified branches for each specified repository.
+```js
+client.commits("martinerko", ["expressjs.com", "react-storybook"], ["master", "gh-pages"], function(err, data) {
+  if (err) {
+    return console.error(err);
+  }
+  data.forEach(printRepositoryCommits);
+});
+```
+
+[More examples ...](https://github.com/martinerko/github-user-contributions/tree/master/examples)
+
 ## License
 (The MIT License)
 
