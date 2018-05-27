@@ -1,10 +1,10 @@
 var github = require("../lib");
-+// set you client id and client secret
-+// you can register you app here
-+// https://github.com/settings/applications/new
-+var client_id = "your_client_id";
-+var client_secret = "your_client_secret";
-+var client = github.client(client_id, client_secret);
+// set you client id and client secret
+// you can register you app here
+// https://github.com/settings/applications/new
+var client_id = "your_client_id";
+var client_secret = "your_client_secret";
+var client = github.client(client_id, client_secret);
 
 client.commits("martinerko", ["github-user-contributions", "react-storybook", "expressjs.com"], ["master","gh-pages"], function(err, data) {
   if (err) {
